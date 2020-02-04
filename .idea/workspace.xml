@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="" />
+    <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_metrics.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WUzGNMOklAuChiDKD1C32odJWP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +30,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
   </component>
@@ -46,8 +55,8 @@
       <recent name="$PROJECT_DIR$/src/models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.train_perceptual_loss">
-    <configuration name="perceptual_loss_test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.compute_metrics">
+    <configuration name="compute_metrics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="neural3d" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,12 +64,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tests/perceptual_loss_test2.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/compute_metrics.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/../results/bedroom $PROJECT_DIR$/../results/bedroom" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -123,7 +132,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
-      <option name="PARAMETERS" value="--dataroot $USER_HOME$/Posdoc/Insight/data/bedroom --name bedroom --checkpoints_dir $PROJECT_DIR$/checkpoints --model pix2pix --gpu_id -1 --display_port 6006" />
+      <option name="PARAMETERS" value="--dataroot $PROJECT_DIR$/../../data/bedroom --name bedroom --checkpoints_dir $PROJECT_DIR$/checkpoints --model pix2pix --gpu_id -1 --display_port 6006" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -144,7 +153,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train_perceptual_loss.py" />
-      <option name="PARAMETERS" value="--dataroot $USER_HOME$/Posdoc/Insight/project/data/bedroom --name bedroom --checkpoints_dir $USER_HOME$/Posdoc/Insight/project/checkpoints --model pix2pixpl --gpu_id -1 --display_port 6006" />
+      <option name="PARAMETERS" value="--dataroot $PROJECT_DIR$/../data/bedroom --name bedroom --checkpoints_dir $PROJECT_DIR$/../checkpoints --model pix2pixpl --gpu_id -1 --display_port 6006" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -154,18 +163,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.train" />
-      <item itemvalue="Python.perceptual_loss_test2" />
       <item itemvalue="Python.perceptual_loss_test3" />
       <item itemvalue="Python.train_perceptual_loss" />
       <item itemvalue="Python.pix2pixpl_model" />
+      <item itemvalue="Python.compute_metrics" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.compute_metrics" />
         <item itemvalue="Python.train_perceptual_loss" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.pix2pixpl_model" />
         <item itemvalue="Python.perceptual_loss_test3" />
-        <item itemvalue="Python.perceptual_loss_test2" />
       </list>
     </recent_temporary>
   </component>
@@ -195,42 +204,42 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="106" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580785853225">
+    <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580849269662">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="106" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1580785853225" />
-    <state width="1259" height="229" key="GridCell.Tab.0.bottom" timestamp="1580788039117">
+    <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1580849269662" />
+    <state width="1259" height="231" key="GridCell.Tab.0.bottom" timestamp="1580856494931">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="229" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580788039117" />
-    <state width="1259" height="229" key="GridCell.Tab.0.center" timestamp="1580788039116">
+    <state width="1259" height="231" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580856494931" />
+    <state width="1259" height="231" key="GridCell.Tab.0.center" timestamp="1580856494931">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="229" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1580788039116" />
-    <state width="1259" height="229" key="GridCell.Tab.0.left" timestamp="1580788039116">
+    <state width="1259" height="231" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1580856494931" />
+    <state width="1259" height="231" key="GridCell.Tab.0.left" timestamp="1580856494930">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="229" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1580788039116" />
-    <state width="1259" height="229" key="GridCell.Tab.0.right" timestamp="1580788039117">
+    <state width="1259" height="231" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1580856494930" />
+    <state width="1259" height="231" key="GridCell.Tab.0.right" timestamp="1580856494931">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="229" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1580788039117" />
-    <state width="1259" height="259" key="GridCell.Tab.1.bottom" timestamp="1580788014855">
+    <state width="1259" height="231" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1580856494931" />
+    <state width="1259" height="231" key="GridCell.Tab.1.bottom" timestamp="1580856494933">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="259" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580788014855" />
-    <state width="1259" height="259" key="GridCell.Tab.1.center" timestamp="1580788014854">
+    <state width="1259" height="231" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580856494933" />
+    <state width="1259" height="231" key="GridCell.Tab.1.center" timestamp="1580856494932">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="259" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1580788014854" />
-    <state width="1259" height="259" key="GridCell.Tab.1.left" timestamp="1580788014854">
+    <state width="1259" height="231" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1580856494932" />
+    <state width="1259" height="231" key="GridCell.Tab.1.left" timestamp="1580856494932">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="259" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1580788014854" />
-    <state width="1259" height="259" key="GridCell.Tab.1.right" timestamp="1580788014855">
+    <state width="1259" height="231" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1580856494932" />
+    <state width="1259" height="231" key="GridCell.Tab.1.right" timestamp="1580856494933">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="259" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1580788014855" />
+    <state width="1259" height="231" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1580856494933" />
     <state x="178" y="123" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1579734102861">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -337,6 +346,21 @@
           <url>file://$PROJECT_DIR$/src/models/pix2pixpl_model.py</url>
           <line>126</line>
           <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/compute_metrics.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/compute_metrics.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/compute_metrics.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

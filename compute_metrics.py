@@ -4,7 +4,7 @@ import os
 import sys
 import cv2
 from src.util.scores import *
-import json
+import pickle
 
 DEFAULT_W = 256
 DEFAULT_H = 256
@@ -24,10 +24,10 @@ def compute_metrics(args):
         sys.exist()
 
     folders = glob.glob(os.path.join(results_dir,'**/'))
-    folders.sort()
+    #sort folders
+    folders.sort(key=lambda x: float(x.strip('/').split('_')[1]))
     isFirst = True
     metric_files = {}
-    nEpochs = len(folders)
 
     print('Parsing folders...')
     for folder in folders: #epoch folder array is ordered
@@ -111,23 +111,8 @@ def compute_metrics(args):
         metrics[scene] = scores
 
     print('Saving scores to {}'.format(output_file))
-    with open(output_file, 'w') as fp:
-        json.dump(metrics, fp)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    with open(output_file, 'wb') as fp:
+        pickle.dump(metrics, fp, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 
