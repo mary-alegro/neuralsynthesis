@@ -102,8 +102,12 @@ def compute_metrics(args):
 
             # compute metrics for original image
             if args.mse:
-                mse_orig_gt = (mse(ch1_orig, ch1_gt) + mse(ch2_orig, ch2_gt) + mse(ch3_orig, ch3_gt)) / 3
-                mse_rec_gt = (mse(ch1_rec, ch1_gt) + mse(ch2_rec, ch2_gt) + mse(ch3_rec, ch3_gt)) / 3
+                #mse_orig_gt = (mse(ch1_orig, ch1_gt) + mse(ch2_orig, ch2_gt) + mse(ch3_orig, ch3_gt)) / 3
+                #mse_rec_gt = (mse(ch1_rec, ch1_gt) + mse(ch2_rec, ch2_gt) + mse(ch3_rec, ch3_gt)) / 3
+
+                mse_orig_gt = mse(im_gt_gry,im_orig_gry)
+                mse_rec_gt = mse(im_gt_gry,im_fake_gry)
+
                 scores[0, 0] = mse_orig_gt  # original image x GT
                 scores[0, count] = mse_rec_gt  # reconstricted image x GT
 
