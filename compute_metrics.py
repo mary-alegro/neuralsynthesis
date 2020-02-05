@@ -5,6 +5,7 @@ import sys
 import cv2
 from src.util.scores import *
 import pickle
+from skimage.measure import compare_ssim
 
 DEFAULT_W = 256
 DEFAULT_H = 256
@@ -17,6 +18,8 @@ def compute_metrics(args):
     if args.mse:
         nMetrics += 1
     if args.mi:
+        nMetrics += 1
+    if args.ssim:
         nMetrics += 1
 
     if nMetrics == 0:
@@ -63,6 +66,9 @@ def compute_metrics(args):
     metrics = {}
     output_file = os.path.join(output_dir, 'metrics.pickle')
     for scene in metric_files.keys(): #each keys is a different scene
+
+        print('Metrics for scene {}'.format(scene))
+
         file_array = metric_files[scene]
         nFiles = len(file_array)
 
@@ -77,6 +83,10 @@ def compute_metrics(args):
             img_fake = cv2.imread(im_fake)
             img_orig = cv2.imread(im_orig)
             img_gt = cv2.imread(im_gt)
+
+            im_fake_gry = cv2.cvtColor(img_fake, cv2.COLOR_BGR2GRAY)
+            im_orig_gry = cv2.cvtColor(img_orig, cv2.COLOR_BGR2GRAY)
+            im_gt_gry = cv2.cvtColor(img_gt, cv2.COLOR_BGR2GRAY)
 
             ch1_orig = img_orig[...,0]
             ch2_orig = img_orig[...,1]
@@ -94,26 +104,30 @@ def compute_metrics(args):
             if args.mse:
                 mse_orig_gt = (mse(ch1_orig, ch1_gt) + mse(ch2_orig, ch2_gt) + mse(ch3_orig, ch3_gt)) / 3
                 mse_rec_gt = (mse(ch1_rec, ch1_gt) + mse(ch2_rec, ch2_gt) + mse(ch3_rec, ch3_gt)) / 3
+                scores[0, 0] = mse_orig_gt  # original image x GT
+                scores[0, count] = mse_rec_gt  # reconstricted image x GT
 
             if args.mi:
                 mi_orig_gt = (mutual_information(ch1_orig, ch1_gt) + mutual_information(ch2_orig, ch2_gt) +
                               mutual_information(ch3_orig, ch3_gt)) / 3
                 mi_rec_gt = (mutual_information(ch1_rec, ch1_gt) + mutual_information(ch2_rec, ch2_gt) +
                               mutual_information(ch3_rec, ch3_gt)) / 3
-
-                scores[0, 0] = mse_orig_gt #original image x GT
                 scores[1, 0] = mi_orig_gt
-
-                scores[0,count] = mse_rec_gt #reconstricted image x GT
                 scores[1,count] = mi_rec_gt
-                count += 1
+
+            if args.ssim:
+                ssim_orig_gt,diff = compare_ssim(im_orig_gry,im_gt_gry, full=True)
+                ssim_rec_gt,diff = compare_ssim(im_fake_gry, im_gt_gry, full=True)
+                scores[2,0] = ssim_orig_gt
+                scores[2,count] = ssim_rec_gt
+
+            count += 1
 
         metrics[scene] = scores
 
     print('Saving scores to {}'.format(output_file))
     with open(output_file, 'wb') as fp:
         pickle.dump(metrics, fp, protocol=pickle.HIGHEST_PROTOCOL)
-
 
 
 if __name__ == '__main__':
@@ -126,6 +140,8 @@ if __name__ == '__main__':
     parser.add_argument("--mse", type=bool, default=True,
                         help="compute ")
     parser.add_argument("--mi", type=int, default=True,
+                        help="output width")
+    parser.add_argument("--ssim", type=int, default=True,
                         help="output width")
 
 
