@@ -17,6 +17,9 @@ with open('/Users/maryana/Posdoc/Insight/project/results/bedroom_pl/metrics.pick
 nImages = len(metrics.keys())
 nImages_pl = len(metrics_pl.keys())
 
+#keys = ['5','6', '26', '39', '87', '104', '136', '139']
+keys=['87','136','139']
+
 #L1 norm
 mse = 0
 mi = 0
@@ -25,8 +28,6 @@ ssim = 0
 mse_orig = 0
 mi_orig = 0
 ssim_orig = 0
-
-keys = ['5','6', '26', '39', '87', '104', '136', '139']
 
 for key in keys:
     mse_key = metrics[key][0]
@@ -51,6 +52,29 @@ ssim /= nImages
 print('Mean metrics for L1 norm')
 print('Original image: MSE {}, MI {}, SSIM {}'.format(mse_orig,mi_orig,ssim_orig))
 print('Repaired image: MSE {}, MI {}, SSIM {}'.format(mse,mi,ssim))
+
+
+#Perceptual norm
+mse_pl = 0
+mi_pl = 0
+ssim_pl = 0
+
+for key in keys:
+    mse_key = metrics_pl[key][0]
+    mi_key = metrics_pl[key][1]
+    ssim_key = metrics_pl[key][2]
+
+    mse_pl += mse_key[-1]
+    mi_pl += mi_key[-1]
+    ssim_pl += ssim_key[-1]
+
+mse_pl /= nImages
+mi_pl /= nImages
+ssim_pl /= nImages
+
+print('Mean metrics for Perceptual Loss norm')
+print('Original image: MSE {}, MI {}, SSIM {}'.format(mse_orig,mi_orig,ssim_orig))
+print('Repaired image: MSE {}, MI {}, SSIM {}'.format(mse_pl,mi_pl,ssim_pl))
 
 
 

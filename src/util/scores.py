@@ -1,10 +1,6 @@
 import numpy as np
 
 def mse(img_mov,img_ref):
-    # D = img_mov - img_ref
-    # mse = np.square(D.flatten()).mean()
-    # return mse
-
     mse = np.mean((img_mov - img_ref) ** 2)
     return mse
 

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compute_mean_metrics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compute_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_mean_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_mean_metrics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/scores.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,38 +208,38 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1580849269662" />
-    <state width="1259" height="366" key="GridCell.Tab.0.bottom" timestamp="1580931216604">
+    <state width="1259" height="216" key="GridCell.Tab.0.bottom" timestamp="1580933561000">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580931216604" />
-    <state width="1259" height="366" key="GridCell.Tab.0.center" timestamp="1580931216603">
+    <state width="1259" height="216" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580933561000" />
+    <state width="1259" height="216" key="GridCell.Tab.0.center" timestamp="1580933561000">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1580931216603" />
-    <state width="1259" height="366" key="GridCell.Tab.0.left" timestamp="1580931216602">
+    <state width="1259" height="216" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1580933561000" />
+    <state width="1259" height="216" key="GridCell.Tab.0.left" timestamp="1580933560999">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1580931216602" />
-    <state width="1259" height="366" key="GridCell.Tab.0.right" timestamp="1580931216603">
+    <state width="1259" height="216" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1580933560999" />
+    <state width="1259" height="216" key="GridCell.Tab.0.right" timestamp="1580933561000">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1580931216603" />
-    <state width="1259" height="366" key="GridCell.Tab.1.bottom" timestamp="1580931213411">
+    <state width="1259" height="216" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1580933561000" />
+    <state width="1259" height="216" key="GridCell.Tab.1.bottom" timestamp="1580933558393">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580931213411" />
-    <state width="1259" height="366" key="GridCell.Tab.1.center" timestamp="1580931213410">
+    <state width="1259" height="216" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
+    <state width="1259" height="216" key="GridCell.Tab.1.center" timestamp="1580933558393">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1580931213410" />
-    <state width="1259" height="366" key="GridCell.Tab.1.left" timestamp="1580931213409">
+    <state width="1259" height="216" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
+    <state width="1259" height="216" key="GridCell.Tab.1.left" timestamp="1580933558393">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1580931213409" />
-    <state width="1259" height="366" key="GridCell.Tab.1.right" timestamp="1580931213410">
+    <state width="1259" height="216" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
+    <state width="1259" height="216" key="GridCell.Tab.1.right" timestamp="1580933558393">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="366" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1580931213410" />
+    <state width="1259" height="216" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
     <state x="178" y="123" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1579734102861">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -347,11 +346,6 @@
           <url>file://$PROJECT_DIR$/src/models/pix2pixpl_model.py</url>
           <line>126</line>
           <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/compute_metrics.py</url>
-          <line>151</line>
-          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/compute_metrics.py</url>
