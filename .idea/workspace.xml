@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/prep_segmentation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compute_mean_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_mean_metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/scores.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
       <recent name="$PROJECT_DIR$/src/models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.compute_metrics">
+  <component name="RunManager" selected="Python.prep_segmentation">
     <configuration name="compute_mean_metrics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="neural3d" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,7 +97,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pix2pixpl_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="prep_segmentation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="neural3d" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -106,12 +105,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/models/pix2pixpl_model.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prep_segmentation.py" />
+      <option name="PARAMETERS" value="$PROJECT_DIR$/../data/bedroom/svm" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -164,17 +163,17 @@
     <list>
       <item itemvalue="Python.train" />
       <item itemvalue="Python.train_perceptual_loss" />
-      <item itemvalue="Python.pix2pixpl_model" />
       <item itemvalue="Python.compute_metrics" />
       <item itemvalue="Python.compute_mean_metrics" />
+      <item itemvalue="Python.prep_segmentation" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.compute_metrics" />
+        <item itemvalue="Python.prep_segmentation" />
         <item itemvalue="Python.compute_mean_metrics" />
+        <item itemvalue="Python.compute_metrics" />
         <item itemvalue="Python.train_perceptual_loss" />
         <item itemvalue="Python.train" />
-        <item itemvalue="Python.pix2pixpl_model" />
       </list>
     </recent_temporary>
   </component>
@@ -204,42 +203,42 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580849269662">
+    <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581031920340">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1580849269662" />
-    <state width="1259" height="216" key="GridCell.Tab.0.bottom" timestamp="1580933561000">
+    <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1581031920340" />
+    <state width="1259" height="329" key="GridCell.Tab.0.bottom" timestamp="1581031922810">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580933561000" />
-    <state width="1259" height="216" key="GridCell.Tab.0.center" timestamp="1580933561000">
+    <state width="1259" height="329" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1581031922810" />
+    <state width="1259" height="329" key="GridCell.Tab.0.center" timestamp="1581031922809">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1580933561000" />
-    <state width="1259" height="216" key="GridCell.Tab.0.left" timestamp="1580933560999">
+    <state width="1259" height="329" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1581031922809" />
+    <state width="1259" height="329" key="GridCell.Tab.0.left" timestamp="1581031922809">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1580933560999" />
-    <state width="1259" height="216" key="GridCell.Tab.0.right" timestamp="1580933561000">
+    <state width="1259" height="329" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1581031922809" />
+    <state width="1259" height="329" key="GridCell.Tab.0.right" timestamp="1581031922809">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1580933561000" />
-    <state width="1259" height="216" key="GridCell.Tab.1.bottom" timestamp="1580933558393">
+    <state width="1259" height="329" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1581031922809" />
+    <state width="1259" height="291" key="GridCell.Tab.1.bottom" timestamp="1581031904067">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
-    <state width="1259" height="216" key="GridCell.Tab.1.center" timestamp="1580933558393">
+    <state width="1259" height="291" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1581031904067" />
+    <state width="1259" height="291" key="GridCell.Tab.1.center" timestamp="1581031904066">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
-    <state width="1259" height="216" key="GridCell.Tab.1.left" timestamp="1580933558393">
+    <state width="1259" height="291" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1581031904066" />
+    <state width="1259" height="291" key="GridCell.Tab.1.left" timestamp="1581031904066">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
-    <state width="1259" height="216" key="GridCell.Tab.1.right" timestamp="1580933558393">
+    <state width="1259" height="291" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1581031904066" />
+    <state width="1259" height="291" key="GridCell.Tab.1.right" timestamp="1581031904066">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="216" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1580933558393" />
+    <state width="1259" height="291" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1581031904066" />
     <state x="178" y="123" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1579734102861">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -248,6 +247,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.23.1280.777@0.23.1280.777" timestamp="1580435212880" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1581014546206">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1581014546206" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -351,6 +354,16 @@
           <url>file://$PROJECT_DIR$/compute_metrics.py</url>
           <line>131</line>
           <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/prep_segmentation.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/prep_segmentation.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
