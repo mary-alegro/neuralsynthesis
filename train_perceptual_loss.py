@@ -55,8 +55,8 @@ if __name__ == '__main__':
             model.set_input(data)         # unpack data from dataset and apply preprocessing
             model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
 
-            losses = model.get_current_losses()
-            print(losses)
+            #losses = model.get_current_losses()
+            #print(losses)
 
             #print('Optimizing {}'.format(total_iters))
 
