@@ -5,7 +5,7 @@ def mse(img_mov,img_ref):
     return mse
 
 def mae(img_mov,img_ref):
-    mae = np.sum(abs(img_mov - img_ref))
+    mae = np.mean(np.sum(abs(img_mov - img_ref)))
     return mae
 
 
