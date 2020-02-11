@@ -29,6 +29,8 @@ mse_orig = 0
 mi_orig = 0
 ssim_orig = 0
 
+keys = metrics.keys()
+
 for key in keys:
     mse_key = metrics[key][0]
     mi_key = metrics[key][1]
