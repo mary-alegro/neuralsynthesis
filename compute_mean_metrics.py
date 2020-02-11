@@ -8,10 +8,10 @@ import pickle
 from skimage.measure import compare_ssim
 
 
-with open('/Users/maryana/Posdoc/Insight/project/results/bedroom/metrics.pickle','rb') as input_file:
+with open('/Users/maryana/Posdoc/Insight/project/results/bedroom/metrics_seg.pickle','rb') as input_file:
     metrics = pickle.load(input_file)
 
-with open('/Users/maryana/Posdoc/Insight/project/results/bedroom_pl/metrics.pickle','rb') as input_file:
+with open('/Users/maryana/Posdoc/Insight/project/results/bedroom_pl/metrics_seg.pickle','rb') as input_file:
     metrics_pl = pickle.load(input_file)
 
 nImages = len(metrics.keys())

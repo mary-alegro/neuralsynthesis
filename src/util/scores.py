@@ -4,6 +4,10 @@ def mse(img_mov,img_ref):
     mse = np.mean((img_mov - img_ref) ** 2)
     return mse
 
+def mae(img_mov,img_ref):
+    mae = np.sum(abs(img_mov - img_ref))
+    return mae
+
 
 #sum of squared errors
 def sse(img_mov, img_ref):

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_perceptual_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_perceptual_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_mean_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_mean_metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compute_metrics_segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/compute_metrics_segmentation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/scores.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +58,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.apply_seg">
+  <component name="RunManager" selected="Python.compute_mean_metrics">
     <configuration name="apply_seg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="neural3d" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,9 +173,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.compute_mean_metrics" />
         <item itemvalue="Python.apply_seg" />
         <item itemvalue="Python.run_inference" />
-        <item itemvalue="Python.compute_mean_metrics" />
         <item itemvalue="Python.test_nohtml" />
         <item itemvalue="Python.neural_render" />
       </list>
@@ -208,22 +211,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="80" y="83" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1581403010220" />
-    <state width="1259" height="200" key="GridCell.Tab.0.bottom" timestamp="1581403278556">
+    <state width="1259" height="200" key="GridCell.Tab.0.bottom" timestamp="1581454284577">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="200" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1581403278556" />
-    <state width="1259" height="200" key="GridCell.Tab.0.center" timestamp="1581403278555">
+    <state width="1259" height="200" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1581454284577" />
+    <state width="1259" height="200" key="GridCell.Tab.0.center" timestamp="1581454284576">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="200" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1581403278555" />
-    <state width="1259" height="200" key="GridCell.Tab.0.left" timestamp="1581403278555">
+    <state width="1259" height="200" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1581454284576" />
+    <state width="1259" height="200" key="GridCell.Tab.0.left" timestamp="1581454284576">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="200" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1581403278555" />
-    <state width="1259" height="200" key="GridCell.Tab.0.right" timestamp="1581403278555">
+    <state width="1259" height="200" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1581454284576" />
+    <state width="1259" height="200" key="GridCell.Tab.0.right" timestamp="1581454284577">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1259" height="200" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1581403278555" />
+    <state width="1259" height="200" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1581454284577" />
     <state width="1259" height="251" key="GridCell.Tab.1.bottom" timestamp="1581403197951">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -348,7 +351,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/compute_metrics.py</url>
-          <line>131</line>
+          <line>141</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

@@ -21,6 +21,8 @@ def compute_metrics(args):
         nMetrics += 1
     if args.ssim:
         nMetrics += 1
+    if args.mae:
+        nMetrics += 1
 
     if nMetrics == 0:
         print('Nothing to compute.')
@@ -128,6 +130,13 @@ def compute_metrics(args):
                 scores[2,0] = ssim_orig_gt
                 scores[2,count] = ssim_rec_gt
 
+            if args.mae:
+                mae_orig_gt = mae(im_gt_gry,im_orig_gry)
+                mae_rec_gt = mae(im_gt_gry,im_fake_gry)
+
+                scores[3, 0] = mae_orig_gt  # original image x GT
+                scores[3, count] = mae_rec_gt  # reconstricted image x GT
+
             count += 1
 
         metrics[scene] = scores
@@ -149,6 +158,8 @@ if __name__ == '__main__':
     parser.add_argument("--mi", type=int, default=True,
                         help="output width")
     parser.add_argument("--ssim", type=int, default=True,
+                        help="output width")
+    parser.add_argument("--mae", type=int, default=True,
                         help="output width")
 
 
