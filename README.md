@@ -1,7 +1,7 @@
 # Neural Render
 This repository contains the code for the Neural Render project, developed during the AI Insight Data Science fellowship.
-Neural Render is based on the _pix2pix network architecture that has had great success performing tasks like style transfer and image
-restauration. 
+Neural Render is based on the [pix2pix](https://phillipi.github.io/pix2pix/) network architecture that has had great success performing tasks like style transfer and image
+restoration. 
 
 ## Requirements
 ```
