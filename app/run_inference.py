@@ -1,11 +1,5 @@
-"""General-purpose test script for image-to-image translation.
-
-"""
-from src.options.test_options import TestOptions
 from src.data import create_dataset
 from src.models import create_model
-from src.util.visualizer import save_images_to_path
-import sys
 from types import SimpleNamespace
 from src.util import util
 import os
@@ -13,14 +7,12 @@ import matplotlib.pyplot as plt
 
 
 def predict(checkpoints_dir,data_root, model, epoch = 10):
-
+    # mimicks the argparse options Namespace structure
     opt = SimpleNamespace()
     opt.aspect_ratio = 1.0
     opt.batch_size = 1
-    #opt.checkpoints_dir = '../checkpoints'
     opt.checkpoints_dir = checkpoints_dir
     opt.crop_size = 256
-    #opt.dataroot = '/Users/maryana/Posdoc/Insight/data/bedroom'
     opt.dataroot = data_root
     opt.dataset_mode = 'aligned'
     opt.direction = 'AtoB'
@@ -37,10 +29,8 @@ def predict(checkpoints_dir,data_root, model, epoch = 10):
     opt.load_iter = epoch
     opt.load_size = 256
     opt.max_dataset_size = float('inf')
-    #opt.model = 'pix2pix'
     opt.model = model
     opt.n_layers_D = 3
-    #opt.name = 'bedroom'
     opt.name = model
     opt.ndf = 64
     opt.netD = 'basic'
@@ -60,7 +50,6 @@ def predict(checkpoints_dir,data_root, model, epoch = 10):
     opt.suffix = ''
     opt.verbose = False
 
-    # hard-code some parameters for test
     opt.num_threads = 0   # test code only supports num_threads = 1
     opt.batch_size = 1    # test code only supports batch_size = 1
     opt.serial_batches = True  # disable data shuffling; comment this line if results on randomly chosen images are needed.
@@ -83,12 +72,10 @@ def predict(checkpoints_dir,data_root, model, epoch = 10):
         im = visuals['fake_B']
         img_rec = util.tensor2im(im)
 
-
     return img_rec
 
-
+# test
 if __name__ == '__main__':
     test_img = ''
-
     img = predict('./checkpoints','./db','pix2pixpl',10)
     plt.imshow(img)

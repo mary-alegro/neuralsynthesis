@@ -150,7 +150,7 @@ if __name__ == '__main__':
     parser.add_argument("resultsroot", type=str,
                         help="full path to directory with all results")
     parser.add_argument("outputdir", type=str,
-                        help="full path to metrics output dir")
+                        help="full path to where the metrics.pickle file will be saved")
     parser.add_argument("--mse", type=bool, default=True,
                         help="compute ")
     parser.add_argument("--mi", type=int, default=True,
