@@ -1,6 +1,6 @@
 # Neural Render
 This repository contains the code for the Neural Render project, developed during the AI Insight Data Science fellowship.
-Neural Render is based on the [pix2pix](https://phillipi.github.io/pix2pix/) network architecture that has had great success performing tasks like style transfer and image restoration. The [presentation slides](https://docs.google.com/presentation/d/16bGAosRl8geZuzGwm6Q3N-gMLayl0CALilGNiwU0zWs/edit#slide=id.g7d5c0ef7ba_0_8952) has more information about Neural Render.
+Neural Render is based on the [pix2pix](https://phillipi.github.io/pix2pix/) network architecture that has had great success performing tasks like style transfer and image restoration. The [presentation slides](https://docs.google.com/presentation/d/16bGAosRl8geZuzGwm6Q3N-gMLayl0CALilGNiwU0zWs/edit#slide=id.g7d5c0ef7ba_0_8952) have more information about Neural Render.
 
 ## Requirements
 ```
@@ -21,10 +21,12 @@ First clone repository:
 ```
 clone https://github.com/mary-alegro/neuralsynthesis
 ```
+
 Enter the repository directory:
 ```
 cd neuralsynthesis
 ```
+
 Download the [pre-trained weights](https://www.dropbox.com/s/hgutluvc3r2lgwl/neural_render_weights.zip?dl=0)
 and unzip the file into the _app/checkpoints_ directory.
 
@@ -32,6 +34,7 @@ Export the `PYTHONPATH` variables:
 ```
 export PYTHONPATH=$PYTHONPATH:../:../src:../app
 ```
+Note that in some systems it might be necessary to use the full path to the cloned repository.
 
 Run the app:
 ```
