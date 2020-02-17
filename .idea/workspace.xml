@@ -4,16 +4,8 @@
     <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/neural_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/neural_render.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/run_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/run_inference.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compute_mean_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/metrics/compute_mean_metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compute_metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/metrics/compute_metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compute_metrics_segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/metrics/compute_metrics_segmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prep_segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/seg/prep_segmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prep_segmentation_par.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/seg/prep_segmentation_par.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/colorization_dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/colorization_model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/cycle_gan_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/create_frames.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/create_result_frames.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/create_frames_pl.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/create_result_frames_pl.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

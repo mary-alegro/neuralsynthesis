@@ -39,11 +39,82 @@ cd app
 streamlit run neural_render.py
 ```
 In the app, you can upload files (there are some test files in the _test_imgs/_ folder) and see the results using both the L1 loss and Perceptual loss models. You can also select different epochs and see how the results look like. Note: the image format used by pix2pix [pytorch implementation](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix), on which this project is based, requires that the input (rendered) image and ground truth image are resized to 256x256 pixels and concatenated together. 
+
+
 ![neural render](./assets/app.gif)
 
 ## Create a dataset
+First, download and uncompress the raw data from [DeepBlending](https://repo-sam.inria.fr/fungraph/deep-blending/data/DeepBlendingTrainingData.zip). NOte it's a 45Gb files.
+
+In this example we will assume the following folder structure:
+```
+/data/data_train/scenes <- images from DeepBlending
+	|
+	+ Yellowhouse-12
+	+ ...
+
+/data
+ |
+ + datasets/
+ 	|
+ 	+ scene/ <- 'scene' is also the dataset name used by the train and test scripts 
+ 		|
+ 		+ test/
+ 		+ train/
+ 		+ val/
+ |
+ + checkpoints/
+ 	|
+ 	+ scene/
+ 		|
+ 		+ *.pth <- network weights
+ |
+ + results/
+ 	|
+ 	+ scene/
+ 		|
+ 		+ scene_N <- results obtained during inference sing weights from epoch N
+ 		+ ...
+```
+
+Copy the files that are going to be used in the dataset to a different folder:
+```
+cd /data/data_train/secenes/Yellowhouse-12
+mkdir pix2pix
+cp * cp *_reference.jpg pix2pix
+cp *_local_layer_0_colors_sample_0003_path_0000.jpg pix2pix
+cp *_local_layer_3_colors_sample_0003_path_0000.jpg pix2pix
+```
+
+Use `create_deepblend_dataset.py` to pre-process the split the dataset in train, test and validation 
+```
+python src/datasets/create_deepblend_dataset.py /data/data_train/scenes /data/datasets/scene
+```
+This will create folders `A` with all rendered images and `B` with all ground truth images inside `/data/datasets/scene`. 
+
+Now use `combine_A_and_B.py` to create the final dataset. 
+```
+python src/datasets/combine_A_and_B.py --fold_A /data/datasets/scene/A --fold_B /data/datasets/scene/B --fold_AB /data/datasets/scene
+```
+
+Optionally, you can delete folders `A` and `B` . 
 
 ## Train
+First, start Visdom:
+```
+ python -m visdom.server -port 6006
+```
+Train using the Perceptual loss model for 500 epochs:
+```
+python train_perceptual_loss.py --dataroot /data/datasets/scene --name bedroom_pl --model pix2pixpl --checkpoints_dir /data/checkpoints --display_port 6006 --dataset_mode aligned --n_epochs 250 --n_epochs_decay 250 --display_freq 100
+```
+Similarly, train using the L1 loss model:
+```
+python train.py --dataroot /data/datasets/scene --name bedroom_pl --model pix2pix --checkpoints_dir /data/checkpoints --display_port 6006 --dataset_mode aligned --n_epochs 250 --n_epochs_decay 250 --display_freq 100
+```
+If you don't have a GPU, add option `--gpu_id -1` to the commands above.
+
+Training information can be visualized using the browser, just connect to `localhost:6006`. 
 
 ## Test
 
