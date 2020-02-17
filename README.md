@@ -82,7 +82,7 @@ In the next sections we will assume the following folder structure:
 
 Copy the files that are going to be used in the dataset to a different folder:
 ```
-cd /data/data_train/secenes/Yellowhouse-12
+cd /data/data_train/scenes/Yellowhouse-12
 mkdir pix2pix
 cp * cp *_reference.jpg pix2pix
 cp *_local_layer_0_colors_sample_0003_path_0000.jpg pix2pix
