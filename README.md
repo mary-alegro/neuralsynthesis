@@ -1,6 +1,6 @@
 # Neural Render
 This repository contains the code for the Neural Render project, developed during the AI Insight Data Science fellowship.
-Neural Render is based on the [pix2pix](https://phillipi.github.io/pix2pix/) network architecture that has had great success performing tasks like style transfer and image restoration. The [slides presentation](https://docs.google.com/presentation/d/16bGAosRl8geZuzGwm6Q3N-gMLayl0CALilGNiwU0zWs/edit#slide=id.g7d5c0ef7ba_0_8952) has more information about Neural Render.
+Neural Render is based on the [pix2pix](https://phillipi.github.io/pix2pix/) network architecture that has had great success performing tasks like style transfer and image restoration. The [presentation slides](https://docs.google.com/presentation/d/16bGAosRl8geZuzGwm6Q3N-gMLayl0CALilGNiwU0zWs/edit#slide=id.g7d5c0ef7ba_0_8952) has more information about Neural Render.
 
 ## Requirements
 ```
@@ -30,7 +30,7 @@ and unzip the file into the _app/checkpoints_ directory.
 
 Export the `PYTHONPATH` variables:
 ```
-export PYTHONPATH=$PYTHONPATH:../:../src:../app:
+export PYTHONPATH=$PYTHONPATH:../:../src:../app
 ```
 
 Run the app:
@@ -44,9 +44,9 @@ In the app, you can upload files (there are some test files in the _test_imgs/_ 
 ![neural render](./assets/app.gif)
 
 ## Create a dataset
-First, download and uncompress the raw data from [DeepBlending](https://repo-sam.inria.fr/fungraph/deep-blending/data/DeepBlendingTrainingData.zip). NOte it's a 45Gb files.
+First, download and uncompress the raw data from [DeepBlending](https://repo-sam.inria.fr/fungraph/deep-blending/data/DeepBlendingTrainingData.zip). Note it's a 45Gb file.
 
-In this example we will assume the following folder structure:
+In the next sections we will assume the following folder structure:
 ```
 /data/data_train/scenes <- images from DeepBlending
 	|
@@ -106,28 +106,46 @@ First, start Visdom:
 ```
 Train using the Perceptual loss model for 500 epochs:
 ```
-python train_perceptual_loss.py --dataroot /data/datasets/scene --name bedroom_pl --model pix2pixpl --checkpoints_dir /data/checkpoints --display_port 6006 --dataset_mode aligned --n_epochs 250 --n_epochs_decay 250 --display_freq 100
+python train_perceptual_loss.py --dataroot /data/datasets/scene --name scene --model pix2pixpl --checkpoints_dir /data/checkpoints --display_port 6006 --dataset_mode aligned --n_epochs 250 --n_epochs_decay 250 --display_freq 100
 ```
 Similarly, train using the L1 loss model:
 ```
-python train.py --dataroot /data/datasets/scene --name bedroom_pl --model pix2pix --checkpoints_dir /data/checkpoints --display_port 6006 --dataset_mode aligned --n_epochs 250 --n_epochs_decay 250 --display_freq 100
+python train.py --dataroot /data/datasets/scene --name scene --model pix2pix --checkpoints_dir /data/checkpoints --display_port 6006 --dataset_mode aligned --n_epochs 250 --n_epochs_decay 250 --display_freq 100
 ```
-If you don't have a GPU, add option `--gpu_id -1` to the commands above.
+Add the `--gpu_id -1` option to use the CPU.
 
-Training information can be visualized using the browser, just connect to `localhost:6006`. 
+Training information can be visualized using the browser by connecting to `localhost:6006`. 
 
 ## Test
+Run inference on the test set using the Perceptual loss:
+```
+python test_nohtml.py --dataroot /data/datasets/scene --name scene --model pix2pixpl --dataset_mode aligned --load_iter 500 --force_test_output /data/results/scene_pl_500 --checkpoint_dir /data/checkpoints
+```
+
+Run inference on the test set using the default L1 loss:
+```
+python test_nohtml.py --dataroot /data/datasets/scene --name scene --model pix2pix --dataset_mode aligned --load_iter 500 --force_test_output /data/results/scene_500 --checkpoint_dir /data/checkpoints
+```
+Results will be saved in the `/data/results/scene_500` folder.
+
+Change the `--load_iter` value to load weights from different epochs.
+
 
 ## Compute image quality metrics
-First, compute the metrics:
+First, compute the metrics using the L1 loss:
 ```
-python src/metrics/ 
+python src/metrics/compute_metrics.py /data/results/scene /data/results/scene
 ```
 This will compute MSE, MI, MAE and SSIM metrics for each rendered/ground truth image pair and save results into a file named _metrics.pickle_.
 
+Similarly, compute the metrics using the Perceptual loss:
+```
+python src/metrics/compute_metrics.py /data/results/scene_pl /data/results/scene_pl
+```
+
 Now compute the mean of all metrics:
 ```
-python 
+python src/metrics/compute_mean_metrics.py /data/results/scene/metrics.pickle /data/results/scene_pl/metrics.pickle
 ```
 
 
