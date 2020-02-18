@@ -19,6 +19,12 @@ def save_image(image):
     else:
         A = image_np[:,0:256,:]
         B = image_np[:,256:512,:]
+
+    if not os.path.exists('./db'):
+        os.mkdir('./db')
+    if not os.path.exists('./db/test'):
+        os.mkdir('./db/test')
+
     io.imsave('./db/test/tmp.png', image_np)
     return A,B
 

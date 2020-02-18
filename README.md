@@ -2,7 +2,8 @@
 This repository contains the code for the Neural Render project, developed during the AI Insight Data Science fellowship.
 Neural Render is based on the [pix2pix](https://phillipi.github.io/pix2pix/) network architecture that has had great success performing tasks like style transfer and image restoration. The [presentation slides](https://docs.google.com/presentation/d/16bGAosRl8geZuzGwm6Q3N-gMLayl0CALilGNiwU0zWs/edit#slide=id.g7d5c0ef7ba_0_8952) have more information about Neural Render.
 
-## Requirements
+## Requirements and environment setup
+Neural Render was tested with:
 ```
 pytorch 1.4.0 
 pytorch-cpu 1.1.0 
@@ -16,6 +17,20 @@ torchfile 0.1.0
 torchvision 0.5.0    
 streamlit 0.54.0
 ```
+First, create a new environment using _conda_:
+```
+conda create --name neural_render
+conda activate neural_render
+```
+Install the dependencies using _conda_:
+```
+conda install -f -y -q --name neural_render -c conda-forge --file requirements_conda.txt
+```
+Some dependencies must be installed with _pip_: 
+```
+pip install -r requirements.txt
+```
+
 ## Setup and run Neural Render app
 First clone repository:
 ```

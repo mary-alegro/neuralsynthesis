@@ -1,0 +1,9 @@
+pytorch
+pytorch-cpu
+numpy
+pillow
+scikit-image
+scikit-learn
+torchfile
+visdom
+jsonpatch
