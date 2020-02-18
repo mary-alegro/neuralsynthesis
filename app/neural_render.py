@@ -7,6 +7,9 @@ import run_inference as ri
 import urllib
 import sys
 
+#OpenMP was causing trouble on MacOS
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
 #print(sys.path)
 
 def save_image(image):
