@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f44b50da-dab6-4d21-9ae7-cf69103a2aac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/metrics_helper.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/segmentation/svm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/segmentation/train_svm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/neural_render.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/neural_render.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/run_inference.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/seg/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/segmentation/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/seg/apply_seg.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/segmentation/seg_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/seg/prep_segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/segmentation/compute_texture_feat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/seg/prep_segmentation_par.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/segmentation/compute_texture_feat_par.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
