@@ -3,9 +3,11 @@ import numpy as np
 import os
 from PIL import Image
 import skimage.io as io
-import run_inference as ri
+from pipeline import Pipeline
+from metrics_helper import MetricsHelper
 import urllib
 import sys
+import pandas as pd
 
 #OpenMP was causing trouble on MacOS
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
@@ -40,21 +42,34 @@ def get_file_content_as_string(path):
 def main():
 
     readme_text = st.markdown(get_file_content_as_string("about.md"))
+
+    # dataframe = pd.DataFrame(
+    #     np.random.randn(2, 2),
+    #     columns=('col %d' % i for i in range(2)))
+    # st.write(dataframe)
+
     data = st.sidebar.file_uploader('Upload a file')
     app_model = st.sidebar.selectbox("Choose model",
                                     ["Pix2Pix L1 norm", "Pix2Pix Perceptual Loss"])
+    app_seg = st.sidebar.selectbox("Use pre-processing?",
+                                    ["No", "Yes"])
     app_epoch = st.sidebar.selectbox("Select epoch",
                                     ['500','10','100', '200', '300','400'])
 
     if data:
         readme_text.empty()
+
         #download image locally and save it in the appropriate format
         image = Image.open(data)
         A,B = save_image(image)
+        has_gt = False
         if B is None:
+            st.markdown('### Input image')
             st.image([A], caption=['Rendered image'])
         else:
+            st.markdown('### Input and ground truth images')
             st.image([A,B], caption=['Rendered image','Ground truth image'])
+            has_gt = True
 
         #get model
         if app_model == 'Pix2Pix L1 norm':
@@ -63,6 +78,13 @@ def main():
             model = 'pix2pixpl'
         else:
             st.sidebar.success('You must select one model.')
+
+        #use segmentation?
+        use_seg = False
+        if app_seg == 'No':
+            use_seg = False
+        elif app_seg == 'Yes':
+            use_seg = True
 
         #get epoch
         if app_epoch == '10':
@@ -79,9 +101,35 @@ def main():
             epoch = 500
 
         #run prediction
-        new_image = ri.predict('./checkpoints','./db',model,epoch)
+        #new_image = ri.predict('./checkpoints','./db',model,epoch)
+        pipeline = Pipeline('./checkpoints','./db',model,epoch)
+        print('*** {}'.format( use_seg))
+
+        new_image,over_image = pipeline.run_pipeline(use_seg)
         #display results
-        st.image([new_image], caption=['Reconstructed image'])
+        if not use_seg:
+            st.markdown('### Reconstruction result')
+            st.image([new_image], caption=['Reconstructed image'])
+        else:
+            st.markdown('### Reconstruction and segmentation results')
+            st.image([new_image, over_image], caption=['Reconstructed image', 'Segmentation mask'])
+
+        #compute metrics if ground truth is available
+        if has_gt:
+            st.markdown('### Quality metrics')
+            metrics = np.zeros((3,2))
+            metobj = MetricsHelper(A,new_image,B)
+            metrics[0, :] = metobj.compute_mse()
+            metrics[1, :] = metobj.compute_ssim()
+            metrics[2, :] = metobj.compute_mae()
+
+            dataframe = pd.DataFrame(
+                metrics,
+                columns=('Original rendered',' Reconstructed'),
+                index=['MSE', 'SSIM', 'MAE'])
+            st.table(dataframe)
+
+
 
 #create GIF from app screencast
 #ffmpeg -ss 00:00:00.000 -i demo_app.mov -pix_fmt rgb24 -r 10 -s 2560x1600 -t 00:00:35.000 output.gif

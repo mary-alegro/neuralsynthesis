@@ -1,3 +1,5 @@
-*
-*/
+/pix2pix
+/pix2pixpl
+*.zip
 !.gitignore
+
